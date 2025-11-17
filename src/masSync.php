@@ -6,7 +6,7 @@ declare(strict_types=1);
  *
  *	@package	sync*gw
  *	@subpackage	ActiveSync support
- *	@copyright	(c) 2008 - 2024 Florian Daeumling, Germany. All right reserved
+ *	@copyright	(c) 2008 - 2025 Florian Daeumling, Germany. All right reserved
  * 	@license 	LGPL-3.0-or-later
  */
 
@@ -672,7 +672,7 @@ class masSync {
    				$xml->addVar(fldExceptions::SUB_TAG[0]);
    				$xml->addVar(fldExceptions::SUB_TAG[1], null);
    				$xml->addVar(fldExceptions::SUB_TAG[2], Util::unxTime($iid));
-   				$xml->getVar('syncgw');
+				$xml->getVar('syncgw');
    				Msg::InfoMsg($xml, 'Deleted instance added');
     			$db->Query($hid|DataStore::EXT, DataStore::UPD, $xml);
     			$db->Query($hid, DataStore::UPD, $xml);

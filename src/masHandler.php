@@ -6,7 +6,7 @@ declare(strict_types=1);
  *
  *	@package	sync*gw
  *	@subpackage	ActiveSync support
- *	@copyright	(c) 2008 - 2024 Florian Daeumling, Germany. All right reserved
+ *	@copyright	(c) 2008 - 2025 Florian Daeumling, Germany. All right reserved
  * 	@license 	LGPL-3.0-or-later
  */
 
@@ -261,7 +261,7 @@ class masHandler extends XML {
     		// get enabled data stores
 			$ena = $cnf->getVar(Config::ENABLED);
 
-	    	// show commands which we support
+			// show commands which we support
 	   	    parent::xpath('//Cmds/*/Version/..');
         	$cmds = [];
         	$ver  = $http->getHTTPVar('MS-ASProtocolVersions');
@@ -289,7 +289,7 @@ class masHandler extends XML {
    			$http->addHeader('MS-ASProtocolCommands', implode(',', $cmds));
 
     		// send data
-			$http->send(200);
+   			$http->send(200);
 			return;
 		} else {
 
@@ -1311,7 +1311,7 @@ class masHandler extends XML {
 	 *  @param  - $parm					[ $hid, $grp, $gid ]
 	 * 	@return - 					    [ $hid, $grp, $gid ]
 	 */
-	public function searchId(int $mod, $parm = null): array {
+	public function searchId(int $mod, ?array $parm = null): array {
 
 		$usr = User::getInstance();
 		$act = $usr->getVar('ActiveDevice');
